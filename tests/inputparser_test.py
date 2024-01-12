@@ -26,6 +26,7 @@ class TestInputParser(unittest.TestCase):
         result = self.parser.parse_commands()
         self.assertEqual(result, expected_result)
 
+
 if __name__ == "__main__":
     unittest.main()
 

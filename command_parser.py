@@ -33,9 +33,11 @@ class CommandParser:
 
         splits = command_text.split(maxsplit=1)
         command, arguments = splits[0], splits[1:]
+
+        # Обработка аргументов и присвоений отдельно от команды
         if '=' in command:
             arguments = ''
-        else:
+        elif len(arguments) != 0:
             arguments = arguments[0].split(' ')
 
         return Pipe(

@@ -6,7 +6,7 @@ from pipe import Pipe
 
 class CommandsExecutor:
     def __init__(self, command_parser: CommandParser) -> None:
-        self.curr_input = ""  # мы же можем принять только позиционные аргументы?
+        self.curr_input = ""
         self.command_parser = command_parser
         self.curr_pipe = None
 

@@ -33,8 +33,12 @@ class Pipe:
                 stdout=subprocess.PIPE,
             )
         except subprocess.CalledProcessError as e:
-            print(f"Command error {e.cmd}!")
-            raise e
+            # Обработка ошибок, связанных с пустым output команды (в частности, grep)
+            if e.returncode in [1, 2]:
+                output = b''
+            else:
+                print(f"Command error {e.cmd}!")
+                raise e
         else:
             output = process.stdout
 

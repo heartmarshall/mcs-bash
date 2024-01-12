@@ -20,7 +20,7 @@ class InputParser:
         -Оригинальная входная строка после удаления лишних пробелов 
         """
         self._input = input_line.strip()
-        return input_line
+        return self._input
 
     def parse_commands(self) -> List[str]:
         """
